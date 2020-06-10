@@ -21,5 +21,12 @@ Auth::routes();
 
 Route::middleware('auth')->group(function() {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/key/{userId}/{keyId}/file', function ($userId, $keyId) {
+        $key = \Illuminate\Support\Facades\Auth::user()->keys()->find($keyId);
+        if (!$key) {
+            return abort(404);
+        }
+        return response()->download(storage_path() . '/app/' . $key->filepath);
+    })->name('key.file');
     Route::resource('/key', 'KeyController');
 });

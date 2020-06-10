@@ -17,6 +17,7 @@ class CreateKeysTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('host');
+            $table->integer('port');
             $table->string('login');
             $table->string('password')->nullable();
             $table->string('filepath')->nullable();

@@ -9,6 +9,7 @@ $factory->define(\App\Models\Key::class, function (Faker $faker) {
     return [
         'name' => $faker->company,
         'host' => $faker->ipv4,
+        'port' => $faker->numberBetween(0, 9999),
         'login' => $faker->slug,
         'password' => !$hasFile ? $faker->password : null,
         'filepath' => $hasFile ? $faker->slug : null,

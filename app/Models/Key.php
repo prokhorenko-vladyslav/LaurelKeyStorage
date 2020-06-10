@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Key extends Model
 {
     protected $fillable = [
-        'name', 'host', 'login', 'password', 'filepath'
+        'name', 'host', 'port', 'login', 'password', 'filepath'
     ];
 
     public function user()

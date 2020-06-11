@@ -10928,3 +10928,58 @@ a.text-dark:focus {
   }
 }
 
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("/img/backround.jpg");
+  background-size: cover;
+  background-position: 75%;
+}
+
+body .backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+body h1,
+body p {
+  text-align: center;
+  color: #fff;
+}
+
+body h1 {
+  font-size: 4rem;
+}
+
+body p {
+  font-size: 1.5rem;
+}
+
+body .home-link {
+  display: block;
+  width: 200px;
+  margin: 0 0.5rem;
+  padding: 13px 26px;
+  text-align: center;
+  background: #5d47d7;
+  border-color: #5d47d7;
+  color: #fff;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+body .home-link.login {
+  background: none;
+  border: 2px solid #fff;
+}
+

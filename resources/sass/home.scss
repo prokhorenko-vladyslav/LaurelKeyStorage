@@ -1,0 +1,45 @@
+body {
+    background-image: url('/img/backround.jpg');
+    background-size: cover;
+    background-position: 75%;
+
+    .backdrop {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .2);
+    }
+
+    h1, p {
+        text-align: center;
+        color: #fff;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .home-link {
+        display: block;
+        width: 200px;
+        margin: 0 .5rem;
+        padding: 13px 26px;
+        text-align: center;
+        background: #5d47d7;
+        border-color: #5d47d7;
+        color: #fff;
+        opacity: .9;
+        text-transform: uppercase;
+
+        &.login {
+            background: none;
+            border: 2px solid #fff;
+        }
+    }
+}

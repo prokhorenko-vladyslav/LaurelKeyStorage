@@ -25,30 +25,10 @@
                             @endforeach
                         @endif
 
-                        <ul class="list-group list-group-flush">
-                            @foreach($keys as $key)
-                                <li class="list-group-item d-flex justify-content-between">
-                                    {{ $key->name }}
-                                    <div class="d-flex">
-                                        <a href="{{ route('key.show', $key->id) }}"
-                                           class="btn btn-primary mr-3">Show</a>
-                                        <a href="{{ route('key.edit', $key->id) }}"
-                                           class="btn btn-primary mr-3">Edit</a>
-                                        <form action="{{ route('key.destroy', $key->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-primary">Delete</button>
-                                        </form>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-
-                        <div class="row mt-3">
-                            <div class="col-12 d-flex justify-content-center">
-                                {{ $keys->links() }}
-                            </div>
-                        </div>
+                        <keys
+                            csrf="{{ csrf_token() }}"
+                            :default_keys='@json($keys)'
+                        ></keys>
                     </div>
                 </div>
             </div>

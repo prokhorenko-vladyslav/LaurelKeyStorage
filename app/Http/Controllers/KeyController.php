@@ -15,12 +15,25 @@ class KeyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $keys = Auth::user()->keys()->orderByDesc('id')->paginate(10);
-        return view('keys.index', [
-            'keys' => $keys
-        ]);
+        $keysQuery = Auth::user()->keys()->orderByDesc('id');
+        if ($request->has('searchQuery') && trim($request->input('searchQuery'))) {
+            $keysQuery
+                ->where('name', 'LIKE', '%' . trim($request->input('searchQuery')) . '%')
+                ->orWhere('host', 'LIKE', '%' . trim($request->input('searchQuery')) . '%')
+                ->orWhere('port', 'LIKE', '%' . trim($request->input('searchQuery')) . '%')
+                ->orWhere('login', 'LIKE', '%' . trim($request->input('searchQuery')) . '%');
+        }
+        $keys = $keysQuery->paginate(10);
+
+        if ($request->ajax()) {
+            return response()->json($keys);
+        } else {
+            return view('keys.index', [
+                'keys' => $keys
+            ]);
+        }
     }
 
     /**

@@ -23,9 +23,9 @@
 <body class="d-flex justify-content-center align-items-center">
 <div class="backdrop"></div>
 @if (Route::has('login'))
-    <div>
-        <h1>We Change Everything WordPress</h1>
-        <p>This is the only WordPress theme you will ever want to use.</p>
+    <div class="main">
+        <h1>Key Storage</h1>
+        <p>This is the most security way to save credentials.</p>
         <div class="links d-flex justify-content-center mt-5">
             @auth
                 <a href="{{ url('/home') }}" class="home-link">Home</a>

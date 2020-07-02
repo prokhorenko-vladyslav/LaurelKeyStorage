@@ -15,11 +15,11 @@
 
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Host: <span onclick="copy(this)">{{ $key->host }}</span></li>
-                            <li class="list-group-item">Port: <span onclick="copy(this)">{{ $key->port }}</span></li>
-                            <li class="list-group-item">Login: <span onclick="copy(this)">{{ $key->login }}</span></li>
+                            <li class="list-group-item">Host: <span class="copy" title="Copy" @click="copy('{{ $key->host }}')">{{ $key->host }}</span></li>
+                            <li class="list-group-item">Port: <span class="copy" title="Copy" @click="copy('{{ $key->port }}')">{{ $key->port }}</span></li>
+                            <li class="list-group-item">Login: <span class="copy" title="Copy" @click="copy('{{ $key->login }}')">{{ $key->login }}</span></li>
                             @if (!empty($key->filepath))
-                            <li class="list-group-item">Password: <span onclick="copy(this)">{{ $key->password }}</span>
+                            <li class="list-group-item">Password: <span class="copy" title="Copy" @click="copy('{{ $key->password }}')">{{ $key->password }}</span>
                             </li>
                             @endif
                             @if (!empty($key->filepath))
@@ -33,17 +33,7 @@
             </div>
         </div>
     </div>
-    <script>
-        function copy(copyText) {
-            /* Select the text field */
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-            /* Copy the text inside the text field */
-            document.execCommand("copy");
-
-            /* Alert the copied text */
-            alert("Copied the text: " + copyText.value);
-        }
-    </script>
+    <div class="copied-success alert alert-success" role="alert" :class="{ 'visible' : copiedSuccess }">
+        Success copied
+    </div>
 @endsection

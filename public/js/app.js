@@ -50862,7 +50862,45 @@ Vue.component('keys', __webpack_require__(/*! ./components/KeysComponent.vue */ 
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: function data() {
+    return {
+      copiedSuccess: false,
+      showTimer: false,
+      hideTimer: false
+    };
+  },
+  methods: {
+    copy: function copy(text) {
+      var _this = this;
+
+      var input = document.createElement('textarea');
+      input.innerHTML = text;
+      document.body.appendChild(input);
+      input.select();
+      var result = document.execCommand('copy');
+      document.body.removeChild(input);
+
+      if (result) {
+        if (this.copiedSuccess) {
+          this.copiedSuccess = false;
+          clearTimeout(this.showTimer);
+          this.hideTimeout = setTimeout(function () {
+            _this.copiedSuccess = true;
+            _this.showTimer = setTimeout(function () {
+              return _this.copiedSuccess = false;
+            }, 4000);
+          }, 700);
+        } else {
+          this.copiedSuccess = true;
+          clearTimeout(this.showTimer);
+          this.showTimer = setTimeout(function () {
+            return _this.copiedSuccess = false;
+          }, 4000);
+        }
+      }
+    }
+  }
 });
 
 /***/ }),

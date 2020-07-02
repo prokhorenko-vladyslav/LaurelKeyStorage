@@ -66,6 +66,7 @@ class KeyController extends Controller
             $key->filepath = $request->file('file')->storeAs('keys/' . Auth::user()->id . "/{$key->id}", $request->file('file')->getClientOriginalName());
             $key->save();
         }
+
         return redirect()->route('key.show', $key->id)->with('status', 'Key has been stored');
     }
 

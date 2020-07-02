@@ -29,4 +29,33 @@ Vue.component('keys', require('./components/KeysComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
+    data: () => ({
+        copiedSuccess : false,
+        showTimer : false,
+        hideTimer : false,
+    }),
+    methods : {
+        copy(text) {
+            var input = document.createElement('textarea');
+            input.innerHTML = text;
+            document.body.appendChild(input);
+            input.select();
+            var result = document.execCommand('copy');
+            document.body.removeChild(input);
+            if (result) {
+                if (this.copiedSuccess) {
+                    this.copiedSuccess = false;
+                    clearTimeout(this.showTimer);
+                    this.hideTimeout = setTimeout(() => {
+                        this.copiedSuccess = true;
+                        this.showTimer = setTimeout(() => this.copiedSuccess = false, 4000);
+                    }, 700);
+                } else {
+                    this.copiedSuccess = true;
+                    clearTimeout(this.showTimer);
+                    this.showTimer = setTimeout(() => this.copiedSuccess = false, 4000);
+                }
+            }
+        }
+    },
 });

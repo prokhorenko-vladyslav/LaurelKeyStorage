@@ -28,27 +28,27 @@
                             <div class="form-group">
                                 <label for="nameInput">Key name</label>
                                 <input type="text" class="form-control" id="nameInput" name="name" required
-                                       value="{{ old('name') }}">
+                                       placeholder="Input key name..." value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
                                 <label for="hostInput">Host</label>
                                 <input type="text" class="form-control" id="hostInput" name="host" required
-                                       value="{{ old('host') }}">
+                                       placeholder="Input key host..." value="{{ old('host') }}">
                             </div>
                             <div class="form-group">
                                 <label for="portInput">Port</label>
                                 <input type="text" class="form-control" id="portInput" name="port" required
-                                       value="{{ old('port') }}">
+                                       placeholder="Input key port..." value="{{ old('port') ?? config('keys.default_port') }}">
                             </div>
                             <div class="form-group">
                                 <label for="loginInput">Login</label>
                                 <input type="text" class="form-control" id="loginInput" name="login" required
-                                       value="{{ old('login') }}">
+                                       placeholder="Input key login..." value="{{ old('login') }}">
                             </div>
                             <div class="form-group">
                                 <label for="passwordInput">Password</label>
                                 <input type="text" class="form-control" id="passwordInput" name="password"
-                                       value="{{ old('password') }}">
+                                       placeholder="Input key password..." value="{{ old('password') }}">
                             </div>
                             <div class="form-group">
                                 <label for="fileInput">SSH key</label>

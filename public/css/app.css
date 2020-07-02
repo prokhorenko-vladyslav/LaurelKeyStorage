@@ -10936,3 +10936,20 @@ body {
   padding: 0;
 }
 
+body .copied-success {
+  position: fixed;
+  right: 1rem;
+  left: 1rem;
+  bottom: -100%;
+  width: calc(100% - 2rem);
+  transition: all 0.5s ease-in-out;
+}
+
+body .copied-success.visible {
+  bottom: 0;
+}
+
+body .copy {
+  cursor: pointer;
+}
+

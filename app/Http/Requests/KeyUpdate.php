@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\HostOrIpRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class KeyUpdate extends FormRequest
@@ -25,7 +26,9 @@ class KeyUpdate extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'host' => 'required|ip|max:255',
+            'host' => [
+                'required', 'max:255', new HostOrIpRule
+            ],
             'port' => 'required|numeric',
             'login' => 'required|string|max:255',
             'password' => 'nullable|string|max:255',

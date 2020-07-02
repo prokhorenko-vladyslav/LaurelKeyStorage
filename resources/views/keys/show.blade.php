@@ -18,11 +18,15 @@
                             <li class="list-group-item">Host: <span onclick="copy(this)">{{ $key->host }}</span></li>
                             <li class="list-group-item">Port: <span onclick="copy(this)">{{ $key->port }}</span></li>
                             <li class="list-group-item">Login: <span onclick="copy(this)">{{ $key->login }}</span></li>
+                            @if (!empty($key->filepath))
                             <li class="list-group-item">Password: <span onclick="copy(this)">{{ $key->password }}</span>
                             </li>
+                            @endif
+                            @if (!empty($key->filepath))
                             <li class="list-group-item">File: <a
                                     href="{{ route('key.file', [ 'userId' => $key->user->id, 'keyId' => $key->id]) }}">Download
                                     SSH Key</a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>

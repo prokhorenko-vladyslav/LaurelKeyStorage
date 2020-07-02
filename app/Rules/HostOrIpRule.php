@@ -11,9 +11,9 @@ class HostOrIpRule implements Rule
 
     protected $pingPort;
 
-    public function __construct(int $pingPort = 80)
+    public function __construct(?int $pingPort = null)
     {
-        $this->pingPort = $pingPort;
+        $this->pingPort = $pingPort ?? config('keys.default_pint_port');
     }
 
     /**
@@ -31,7 +31,7 @@ class HostOrIpRule implements Rule
     public function ping($host)
     {
         try {
-            $fp = fsockopen($host, 80, $errorCode, $errorCode, 5);
+            $fp = fsockopen($host, $this->pingPort, $errorCode, $errorCode, 5);
             if ($fp === false) {
                 return false;
             }

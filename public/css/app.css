@@ -10929,11 +10929,12 @@ a.text-dark:focus {
 }
 
 body {
-  min-width: 100vw;
+  width: 100vw;
   min-height: 100vh;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body .copied-success {
@@ -10951,5 +10952,9 @@ body .copied-success.visible {
 
 body .copy {
   cursor: pointer;
+}
+
+body .dashboard {
+  background: #f3f6f9;
 }
 

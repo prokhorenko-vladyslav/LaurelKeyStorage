@@ -37,14 +37,14 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header d-flex align-items-center justify-content-between">
+            <div class="col-md-12 p-0">
+                <div class="card tab__content">
+                    <div class="card-header pt-4 pb-4 d-flex align-items-center justify-content-between">
                         Keys
-                        <a href="{{ route('key.create') }}" class="btn btn-primary">Add</a>
+                        <a href="{{ route('key.create') }}" class="btn btn-primary">New FTP/SSH credentials</a>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body m-4">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}

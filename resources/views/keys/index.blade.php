@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-3 p-0">
                 <div class="tab current">
-                    <a href="#" class="tab__link">
+                    <a href="#" class="tab__link border-radius-top-left">
                         FTP/SSH
                         <span class="tab__link__description">FTP or SSH credentials</span>
                     </a>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-md-3 p-0">
                 <div class="tab">
-                    <a href="#" class="tab__link border-none">
+                    <a href="#" class="tab__link border-none border-radius-top-right">
                         Hosting
                         <span class="tab__link__description">Hosting credentials</span>
                     </a>

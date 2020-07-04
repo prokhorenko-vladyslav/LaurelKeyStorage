@@ -54,6 +54,14 @@ body {
                     border: none;
                 }
 
+                &.border-radius-top-left {
+                    border-top-left-radius: .42rem;
+                }
+
+                &.border-radius-top-right {
+                    border-top-right-radius: .42rem;
+                }
+
                 .tab__link__description {
                     font-size: 1rem;
                     color: #b5b5c3;

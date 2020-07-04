@@ -10984,6 +10984,14 @@ body .dashboard .tab .tab__link.border-none {
   border: none;
 }
 
+body .dashboard .tab .tab__link.border-radius-top-left {
+  border-top-left-radius: 0.42rem;
+}
+
+body .dashboard .tab .tab__link.border-radius-top-right {
+  border-top-right-radius: 0.42rem;
+}
+
 body .dashboard .tab .tab__link .tab__link__description {
   font-size: 1rem;
   color: #b5b5c3;

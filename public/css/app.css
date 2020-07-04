@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Poppins);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
@@ -10956,5 +10956,59 @@ body .copy {
 
 body .dashboard {
   background: #f3f6f9;
+  font-family: "Poppins", serif;
+}
+
+body .dashboard .tab {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body .dashboard .tab .tab__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  background-color: #f0f3f5;
+  border-right: 1px solid #e4e6ef;
+  font-size: 1rem;
+  color: #7e8299;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out;
+}
+
+body .dashboard .tab .tab__link.border-none {
+  border: none;
+}
+
+body .dashboard .tab .tab__link.border-radius-top-left {
+  border-top-left-radius: 0.42rem;
+}
+
+body .dashboard .tab .tab__link.border-radius-top-right {
+  border-top-right-radius: 0.42rem;
+}
+
+body .dashboard .tab .tab__link .tab__link__description {
+  font-size: 0.8rem;
+  color: #b5b5c3;
+}
+
+body .dashboard .tab .tab__link,
+body .dashboard .tab .tab__link * {
+  text-decoration: none;
+}
+
+body .dashboard .tab.current .tab__link {
+  background-color: #fff;
+}
+
+body .dashboard .tab:hover .tab__link {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 

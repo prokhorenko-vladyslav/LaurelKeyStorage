@@ -11012,3 +11012,25 @@ body .dashboard .tab:hover .tab__link {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
+body .dashboard .tab__content {
+  border: none;
+}
+
+body .dashboard .tab__content .card-header {
+  background: #fff;
+  color: #7e8299;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+body .dashboard .tab__content .card-body {
+  border: 1px solid #ebedf3;
+  border-radius: 0.42rem;
+}
+
+body .btn-primary {
+  color: #fff;
+  background-color: #8950fc;
+  border-color: #8950fc;
+}
+

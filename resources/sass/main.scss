@@ -86,5 +86,27 @@ body {
                 }
             }
         }
+
+        .tab__content {
+            border: none;
+
+            .card-header {
+                background: #fff;
+                color: #7e8299;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            .card-body {
+                border: 1px solid #ebedf3;
+                border-radius: .42rem;
+            }
+        }
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #8950fc;
+        border-color: #8950fc;
     }
 }

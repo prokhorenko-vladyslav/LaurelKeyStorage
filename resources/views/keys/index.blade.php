@@ -44,7 +44,7 @@
                         <a href="{{ route('key.create') }}" class="btn btn-primary">New FTP/SSH credentials</a>
                     </div>
 
-                    <div class="card-body m-4">
+                    <div class="card-body m-4 mb-5">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}

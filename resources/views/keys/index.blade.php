@@ -23,7 +23,7 @@
                 <div class="tab">
                     <a href="#" class="tab__link">
                         Admin
-                        <span class="tab__link__description">Admin credentials</span>
+                        <span class="tab__link__description">Credentials for admin panels or dashboards</span>
                     </a>
                 </div>
             </div>

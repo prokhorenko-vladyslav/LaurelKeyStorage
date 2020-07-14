@@ -18,7 +18,7 @@
                             <li class="list-group-item">Host: <span class="copy" title="Copy" @click="copy('{{ $key->host }}')">{{ $key->host }}</span></li>
                             <li class="list-group-item">Port: <span class="copy" title="Copy" @click="copy('{{ $key->port }}')">{{ $key->port }}</span></li>
                             <li class="list-group-item">Login: <span class="copy" title="Copy" @click="copy('{{ $key->login }}')">{{ $key->login }}</span></li>
-                            @if (!empty($key->filepath))
+                            @if (!empty($key->password))
                             <li class="list-group-item">Password: <span class="copy" title="Copy" @click="copy('{{ $key->password }}')">{{ $key->password }}</span>
                             </li>
                             @endif
